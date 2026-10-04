@@ -113,6 +113,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const heroProjectsBtn = document.getElementById('heroViewProjectsBtn');
+    if (heroProjectsBtn) {
+        heroProjectsBtn.addEventListener('click', (e) => {
+            const projectsSec = document.getElementById('projects');
+            if (projectsSec) {
+                e.preventDefault();
+                projectsSec.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
     // ----------------------------------------------------
     // 4. Dynamic Role Typing Effect
     // ----------------------------------------------------
