@@ -377,6 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const skills = (btn.getAttribute('data-skills') || '').split(',');
         const iconClass = btn.getAttribute('data-icon') || 'bx-award';
         const imgSrc = btn.getAttribute('data-img') || '';
+        const verifyUrl = btn.getAttribute('data-verify-url');
 
         if (modalTitle) modalTitle.textContent = title;
         if (modalIssuer) modalIssuer.textContent = `Issued by ${issuer}`;
@@ -399,7 +400,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (modalVerifyBtn) {
             modalVerifyBtn.onclick = () => {
-                showToast(`Verified Credential: ${title} (${certId})`, 'success');
+                if (verifyUrl) {
+                    window.open(verifyUrl, '_blank', 'noopener,noreferrer');
+                    showToast(`Opening Verification Portal for Certificate ID: ${certId}`, 'success');
+                } else {
+                    showToast(`Verified Credential: ${title} (${certId})`, 'success');
+                }
             };
         }
 

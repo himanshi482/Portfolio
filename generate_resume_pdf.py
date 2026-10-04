@@ -216,6 +216,7 @@ def create_resume(output_filename="Himanshi_Bawne_Resume.pdf"):
     # Certifications & Soft Skills
     story.append(Paragraph("CERTIFICATIONS & SOFT SKILLS", section_heading))
     story.append(HRFlowable(width="100%", thickness=0.6, color=line_gray, spaceBefore=0, spaceAfter=3))
+    story.append(Paragraph("&bull; <b>AI Prompt Engineering Internship Selection</b> — InAmigos Foundation (Internshala)", bullet_style))
     story.append(Paragraph("&bull; <b>Data Analysis | SQL, Tableau, Power BI & Excel | Real Projects</b> — Udemy", bullet_style))
     story.append(Paragraph("&bull; <b>Core Java</b> — Internshala", bullet_style))
     story.append(Paragraph("&bull; <b>Cyber Job Simulation</b> — Deloitte", bullet_style))
